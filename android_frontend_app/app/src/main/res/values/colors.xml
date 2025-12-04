@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ocean_primary">#2563EB</color>
+    <color name="ocean_secondary">#F59E0B</color>
+    <color name="ocean_error">#EF4444</color>
+    <color name="ocean_bg">#f9fafb</color>
+    <color name="ocean_surface">#ffffff</color>
+    <color name="ocean_text">#111827</color>
+</resources>

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">StreamTranslate</string>
+    <string name="player">Player</string>
+    <string name="settings">Settings</string>
+    <string name="translate">Translate</string>
+    <string name="cc">CC</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="mute">Mute</string>
+    <string name="unmute">Unmute</string>
+    <string name="stream_url">Stream URL (HLS)</string>
+    <string name="url_hint">https://example.com/stream.m3u8</string>
+    <string name="sidecar_vtt">Sidecar VTT URL (optional)</string>
+    <string name="vtt_hint">https://example.com/subs.vtt</string>
+    <string name="auto_translate">Auto translate</string>
+    <string name="translation_latency">Translation latency simulation</string>
+    <string name="save">Save</string>
+    <string name="saved">Saved</string>
+    <string name="ms_default">150 ms</string>
+    <string name="ms_format">%1$d ms</string>
+</resources>

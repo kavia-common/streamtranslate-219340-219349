@@ -1,0 +1,185 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f9fafb"
+    tools:context=".MainActivity">
+
+    <!-- Top App Bar / Controls -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:padding="12dp"
+        android:elevation="2dp"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/srcSpinner"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_spinner"/>
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginHorizontal="8dp"
+            android:background="#2563EB" />
+
+        <Spinner
+            android:id="@+id/dstSpinner"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_spinner"/>
+
+        <CheckBox
+            android:id="@+id/translateToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/translate"
+            android:textColor="#111827"
+            android:paddingStart="12dp"
+            android:buttonTint="#2563EB"/>
+
+        <ImageButton
+            android:id="@+id/settingsButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_icon_button"
+            android:contentDescription="@string/settings"
+            android:src="@drawable/ic_settings"
+            app:tint="#2563EB"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <!-- Player Container -->
+    <FrameLayout
+        android:id="@+id/playerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/topBar"
+        android:layout_above="@+id/bottomControls"
+        android:layout_margin="12dp"
+        android:background="@drawable/bg_surface">
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/playerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:keepScreenOn="true"
+            android:background="#000000"
+            android:contentDescription="@string/player"
+            />
+
+        <!-- Single-line overlay (either original or translated) -->
+        <TextView
+            android:id="@+id/subtitleOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="16dp"
+            android:padding="12dp"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:shadowColor="#80000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="3"
+            android:background="@drawable/bg_subtitle"
+            android:gravity="center"
+            tools:text="Sample subtitle translated"/>
+
+        <!-- Two-line mode: original and translated -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/originalSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textColor="#E5E7EB"
+                android:textSize="16sp"
+                android:background="@drawable/bg_subtitle_translucent"
+                android:gravity="center"
+                tools:text="Original subtitle" />
+
+            <TextView
+                android:id="@+id/translatedSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="10dp"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:background="@drawable/bg_subtitle"
+                android:gravity="center"
+                tools:text="[Translated] Subtitle" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!-- Bottom Controls -->
+    <LinearLayout
+        android:id="@+id/bottomControls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:padding="12dp"
+        android:orientation="horizontal"
+        android:elevation="2dp">
+
+        <ImageButton
+            android:id="@+id/playPause"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_icon_button"
+            android:src="@drawable/ic_play"
+            android:contentDescription="@string/play"
+            app:tint="#2563EB"/>
+
+        <ImageButton
+            android:id="@+id/muteToggle"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_icon_button"
+            android:src="@drawable/ic_volume_on"
+            android:contentDescription="@string/mute"
+            android:layout_marginStart="8dp"
+            app:tint="#2563EB"/>
+
+        <CheckBox
+            android:id="@+id/ccToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cc"
+            android:textColor="#111827"
+            android:paddingStart="12dp"
+            android:buttonTint="#F59E0B"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/errorSnackbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#EF4444"
+            android:visibility="gone"
+            android:textStyle="bold"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+</RelativeLayout>

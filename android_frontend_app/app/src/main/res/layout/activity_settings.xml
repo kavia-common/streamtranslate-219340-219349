@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#f9fafb"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_surface"
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/stream_url"
+            android:textColor="#111827"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/urlInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/url_hint"
+            android:textColor="#111827"
+            android:textColorHint="#6B7280"
+            android:background="@drawable/bg_input"
+            android:padding="12dp"
+            android:text="" />
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:text="@string/sidecar_vtt"
+            android:textColor="#111827"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/vttInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/vtt_hint"
+            android:textColor="#111827"
+            android:textColorHint="#6B7280"
+            android:background="@drawable/bg_input"
+            android:padding="12dp"
+            android:text="" />
+
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="@string/auto_translate"
+                android:textColor="#111827"
+                android:textSize="16sp"
+                android:layout_gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
+            <Switch
+                android:id="@+id/autoTranslateSwitch"
+                android:thumbTint="#2563EB"
+                android:trackTint="#93C5FD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:text="@string/translation_latency"
+            android:textColor="#111827"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <SeekBar
+            android:id="@+id/latencySeek"
+            android:max="40"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/latencyValue"
+            android:textColor="#6B7280"
+            android:text="@string/ms_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:backgroundTint="#2563EB"/>
+    </LinearLayout>
+</ScrollView>
